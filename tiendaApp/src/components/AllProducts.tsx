@@ -22,6 +22,7 @@ type Rating = {
 export const AllProducts = () => {
   const { products } = useAllProducts();
   const { category } = useParams();
+  const data = false;
 
   const filteredProducts = products.filter(
     (product: Product) => product.category === category
@@ -30,7 +31,7 @@ export const AllProducts = () => {
   return (
     <>
       <h1 className="text_list">Lista de Productos</h1>
-      <Categories />
+      <Categories data={data} />
       {filteredProducts.length === 0 ? (
         <ul className="container">
           {products?.map((product: Product) => (

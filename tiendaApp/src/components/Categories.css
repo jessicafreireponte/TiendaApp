@@ -1,0 +1,47 @@
+nav.headerNav ul li {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Estilos para el menú principal */
+.headerNav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.headerNav li {
+  display: inline-block;
+  position: relative;
+}
+
+.headerNav li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+}
+
+/* Estilos para el menú desplegable */
+.headerNav .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  padding: 0;
+  margin: 0;
+}
+
+.headerNav .submenu li {
+  display: block;
+}
+
+.headerNav .submenu li a {
+  padding: 8px 15px;
+}
+
+/* Mostrar el menú desplegable al pasar el cursor sobre el elemento principal */
+.headerNav li:hover .submenu {
+  display: block;
+}

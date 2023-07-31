@@ -1,0 +1,23 @@
+.layout {
+  display: grid;
+  grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
+  gap: 8px;
+}
+
+div header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: aqua;
+}
+div main {
+  grid-area: main;
+}
+div footer {
+  grid-area: footer;
+}

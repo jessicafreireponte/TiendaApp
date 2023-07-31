@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./Categories.css";
 
-export const Categories = () => {
+export const Categories = ({ data }: boolean) => {
   const navigate = useNavigate();
 
   const handleCategoryChange = (
@@ -30,6 +31,27 @@ export const Categories = () => {
     }
   };
 
+  if (data) {
+    return (
+      <nav className="headerNav">
+        menu
+        <ul className="submenu">
+          <li onClick={() => navigate("/products/category/women's clothing")}>
+            Woman
+          </li>
+          <li onClick={() => navigate("/products/category/men's clothing")}>
+            Men
+          </li>
+          <li onClick={() => navigate("/products/category/jewelery")}>
+            Jewelery
+          </li>
+          <li onClick={() => navigate("/products/category/electronics")}>
+            Electronics
+          </li>
+        </ul>
+      </nav>
+    );
+  }
   return (
     <>
       <form className="containerForm ">
