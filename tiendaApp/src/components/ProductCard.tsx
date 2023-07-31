@@ -20,7 +20,9 @@ type Rate = {
 export const ProductCard = (product: Product) => {
   return (
     <article className="card">
-      <img src={product.image} alt={product.title} className="card-img" />
+      <Link to={`/products/${product.id}`}>
+        <img src={product.image} alt={product.title} className="card-img" />
+      </Link>
       <section className="card-container">
         <h3 className="card-title">{product.title}</h3>
         <p className="card-paragraph">{product.description}</p>
