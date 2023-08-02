@@ -3,11 +3,10 @@ import { Categories } from "../components/Categoies";
 import "./Home.css";
 
 export const Home = () => {
-  const data = false;
   return (
     <div className="layout">
       <header>
-        <Categories data={data} />
+        <Categories data={true} />
         TuTiendaFavotita
         <p> 🛍️ </p>
       </header>

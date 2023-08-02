@@ -20,4 +20,5 @@ div main {
 }
 div footer {
   grid-area: footer;
+  background-color: aqua;
 }

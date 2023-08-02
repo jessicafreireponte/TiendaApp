@@ -1,47 +1,52 @@
-nav.headerNav ul li {
+/* Estilo base del menú */
+nav {
   cursor: pointer;
-  text-transform: uppercase;
 }
 
-/* Estilos para el menú principal */
-.headerNav ul {
+nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  background-color: #f1f1f1;
+  display: none;
+  width: 60vw;
 }
-
-.headerNav li {
-  display: inline-block;
-  position: relative;
-}
-
-.headerNav li a {
+nav ul.active {
   display: block;
-  text-decoration: none;
-  color: #333;
-  padding: 10px;
+  position: absolute;
 }
 
-/* Estilos para el menú desplegable */
-.headerNav .submenu {
+nav li {
+  padding: 10px 20px;
+}
+
+nav ul li:hover {
+  background-color: #b3b3b3;
+}
+
+nav li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Estilo del menú desplegable */
+.dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #f9f9f9;
-  padding: 0;
-  margin: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.headerNav .submenu li {
+.dropdown-content a {
   display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
 }
 
-.headerNav .submenu li a {
-  padding: 8px 15px;
-}
-
-/* Mostrar el menú desplegable al pasar el cursor sobre el elemento principal */
-.headerNav li:hover .submenu {
+/* Mostrar el menú desplegable al pasar por encima */
+nav li:hover .dropdown-content {
   display: block;
 }

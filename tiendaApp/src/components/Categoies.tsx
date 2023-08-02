@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Categories.css";
 
-export const Categories = ({ data }: boolean) => {
+export const Categories = ({ data }: { data: boolean }) => {
   const navigate = useNavigate();
+  const [focus, setFocus] = useState(false);
 
   const handleCategoryChange = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -31,31 +32,36 @@ export const Categories = ({ data }: boolean) => {
     }
   };
 
+  const handleFocus = () => {
+    setFocus(!focus);
+  };
+
   if (data) {
     return (
-      <nav className="headerNav">
-        menu
-        <ul className="submenu">
-          <li onClick={() => navigate("/products/category/women's clothing")}>
-            Woman
+      <nav className="headerNav" onClick={handleFocus}>
+        <h3 className="menu">Menu</h3>
+        <ul className={`submenu ${focus ? "active" : ""}`}>
+          <li>
+            <a href="/products/category/women's clothing">Woman</a>
           </li>
-          <li onClick={() => navigate("/products/category/men's clothing")}>
-            Men
+          <li>
+            <a href="/products/category/men's clothing">Men</a>
           </li>
-          <li onClick={() => navigate("/products/category/jewelery")}>
-            Jewelery
+          <li>
+            <a href="/products/category/jewelery">Jewelery</a>
           </li>
-          <li onClick={() => navigate("/products/category/electronics")}>
-            Electronics
+          <li>
+            <a href="/products/category/electronics">Electronics</a>
           </li>
         </ul>
       </nav>
     );
   }
+
   return (
     <>
-      <form className="containerForm ">
-        <h5>Filtro </h5>
+      <form className="containerForm">
+        <h5>Filtro</h5>
         <select onChange={handleCategoryChange} defaultValue="all">
           <option value="all">All</option>
           <option value="electronics">Electronics</option>
