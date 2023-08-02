@@ -11,9 +11,16 @@
 div header {
   grid-area: header;
   display: flex;
+  padding: 0 1rem;
   justify-content: space-between;
   width: 100%;
-  background-color: aqua;
+  box-shadow: 1px 2px 2px rgb(177, 177, 177);
+  height: 60px;
+  align-items: center;
+}
+div header img {
+  height: 60px;
+  object-fit: contain;
 }
 div main {
   grid-area: main;

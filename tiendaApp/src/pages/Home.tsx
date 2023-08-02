@@ -7,7 +7,7 @@ export const Home = () => {
     <div className="layout">
       <header>
         <Categories data={true} />
-        TuTiendaFavotita
+        <img src="./logo.png" alt="logo tienda" />
         <p> 🛍️ </p>
       </header>
       <main>
